@@ -1,5 +1,5 @@
 import sys
-from logger import logging
+from src.logger import logging
 
 def error_message_details(error,error_details:sys):
     _,_,exc_tb=error_details.exc_info()
@@ -29,4 +29,3 @@ if __name__ == "__main__":
         logging.info("Logging has started")
         raise CustomeException(e,sys)
 
-    
