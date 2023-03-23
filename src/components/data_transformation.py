@@ -8,7 +8,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 
-from src.exception import CustomeException
+from src.exception import CustomException
 from src.logger import logging
 import os
 
@@ -71,7 +71,7 @@ class DataTransformation:
             return preprocessor
         
         except Exception as e:
-            raise CustomeException(e,sys)
+            raise CustomException(e,sys)
         
     def initiate_data_transformation(self,train_path,test_path):
 
@@ -119,5 +119,7 @@ class DataTransformation:
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
+            
+            
         except Exception as e:
-            raise CustomeException(e,sys)
+            raise CustomException(e,sys)
